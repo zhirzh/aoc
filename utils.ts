@@ -60,3 +60,9 @@ export function zip<T>(a: T[], b: T[]): [T, T][] {
   if (a.length !== b.length) throw new Error("zip: length mismatch");
   return a.map((x, i) => [x, b[i]]);
 }
+
+export function sortNumbers<T>(xs: Iterable<T>, by: (x: T) => number = pass) {
+  return [...xs].sort((a, b) => by(a) - by(b));
+}
+
+const pass = <T>(x: unknown) => x as T;
