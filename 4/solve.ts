@@ -1,9 +1,6 @@
-import { readFileSync } from "fs";
+import { readLines } from "../utils";
 
-const rows = readFileSync(
-  import.meta.resolve("./input").replace("file://", ""),
-  "utf8"
-).split("\n");
+const rows = readLines("./4/input");
 
 const totalRows = rows.length;
 const totalCols = rows[0].length;

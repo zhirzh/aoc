@@ -1,7 +1,6 @@
-import { readFileSync } from "fs";
-import { inRange, printGrid, readGrid } from "../utils";
+import { inRange, readNumberGrid } from "../utils";
 
-const grid = readGrid("./10/input");
+const grid = readNumberGrid("./10/input");
 const R = grid.length;
 const C = grid[0].length;
 

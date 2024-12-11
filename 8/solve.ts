@@ -1,12 +1,6 @@
-import { readFileSync } from "fs";
-import { inRange, printGrid } from "../utils";
+import { inRange, readGrid } from "../utils";
 
-const grid = readFileSync(
-  import.meta.resolve("./input").replace("file://", ""),
-  "utf8"
-)
-  .split("\n")
-  .map((line) => line.split(""));
+const grid = readGrid("./8/input", { split: "\n", colSplit: "" });
 
 const R = grid.length;
 const C = grid[0].length;

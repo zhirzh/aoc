@@ -1,11 +1,6 @@
-import { readFileSync } from "fs";
+import { readNumbers } from "../utils";
 
-const nums = readFileSync(
-  import.meta.resolve("./sample").replace("file://", ""),
-  "utf8"
-)
-  .split("")
-  .map(Number);
+const nums = readNumbers("./9/input", { split: "" });
 
 const blocks: number[] = [];
 const holeIdxs: number[] = [];

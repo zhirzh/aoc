@@ -1,20 +1,16 @@
-import { readFileSync } from "fs";
+import { readNumberGrid } from "../utils";
 
-const lines = readFileSync(
-  import.meta.resolve("./input").replace("file://", ""),
-  "utf8"
-).split("\n");
-
-const rows = lines.map((line) => line.split(" ").map(Number));
+const grid = readNumberGrid("./2/input");
 
 let p1 = 0;
-for (const row of rows) {
+for (const row of grid) {
   if (check(row)) p1++;
 }
+
 console.log(p1 === 356);
 
 let p2 = 0;
-for (const row of rows) {
+for (const row of grid) {
   for (let i = 0; i < row.length; i++) {
     const nums = [...row];
     nums.splice(i, 1);
@@ -24,6 +20,7 @@ for (const row of rows) {
     }
   }
 }
+
 console.log(p2 === 413);
 
 function check(nums: number[]) {

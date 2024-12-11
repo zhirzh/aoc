@@ -1,16 +1,12 @@
-import { readFileSync } from "fs";
+import { readNumberGrid } from "../utils";
 
-const lines = readFileSync(
-  import.meta.resolve("./input").replace("file://", ""),
-  "utf8"
-).split("\n");
+const grid = readNumberGrid("./1/input", { split: "\n", colSplit: "   " });
 
 const xs: number[] = [];
 const ys: number[] = [];
 const counts = new Map<number, number>();
 
-lines.forEach((line) => {
-  const [x, y] = line.split(/\s+/).map(Number);
+grid.forEach(([x, y]) => {
   xs.push(x);
   ys.push(y);
   counts.set(y, (counts.get(y) ?? 0) + 1);

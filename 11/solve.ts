@@ -1,6 +1,6 @@
-import { readGrid, sum } from "../utils";
+import { readNumberGrid, sum } from "../utils";
 
-const [stones] = readGrid("./11/input", " ");
+const [stones] = readNumberGrid("./11/input", { split: " " });
 
 function solve(n: number) {
   let stoneCounts = new Map<number, number>();

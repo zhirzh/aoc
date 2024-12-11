@@ -1,9 +1,6 @@
-import { readFileSync } from "fs";
+import { readLines } from "../utils";
 
-const lines = readFileSync(
-  import.meta.resolve("./input").replace("file://", ""),
-  "utf8"
-).split("\n");
+const lines = readLines("./7/input");
 
 const ops = ["+", "*", "|"];
 

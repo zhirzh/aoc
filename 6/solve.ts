@@ -1,17 +1,12 @@
-import { readFileSync } from "fs";
+import { readGrid } from "../utils";
 
-const grid = readFileSync(
-  import.meta.resolve("./input").replace("file://", ""),
-  "utf8"
-)
-  .split("\n")
-  .map((line) => line.split(""));
+const grid = readGrid("./6/input", { split: "\n", colSplit: "" });
 
 const R = grid.length;
 const C = grid[0].length;
 // console.table(grid);
 
-type Pos = [row: number, col: number];
+type Pos = [r: number, c: number];
 let pos = [0, 0] as Pos;
 for (let r = 0; r < R; r++) {
   for (let c = 0; c < C; c++) {
