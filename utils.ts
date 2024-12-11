@@ -15,14 +15,28 @@ export function inRange(x: number, lo: number, hi: number) {
   return lo <= x && x < hi;
 }
 
-export function readGrid(file: string) {
+export function readFile(file: string) {
   const { pathname } = new URL(file, import.meta.url);
-  const text = readFileSync(pathname, "utf8");
-  const lines = text.split("\n");
-  const grid = lines.map((line) => line.split(""));
+  return readFileSync(pathname, "utf8");
+}
+
+export function readLines(file: string) {
+  const text = readFile(file);
+  return text.split("\n");
+}
+
+export function readGrid(file: string, split = "") {
+  const lines = readLines(file);
+  const grid = lines.map((line) => line.split(split));
   return grid.map((row) => row.map(Number));
 }
 
 export function printGrid(grid: unknown[][]) {
   console.log(grid.map((row) => row.join("")).join("\n"));
+}
+
+export function sum(nums: Iterable<number>) {
+  let sum = 0;
+  for (const num of nums) sum += num;
+  return sum;
 }
