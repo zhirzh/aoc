@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "run": "tsx",
+    "test": "tsx",
     "watch": "tsx watch"
   },
   "dependencies": {

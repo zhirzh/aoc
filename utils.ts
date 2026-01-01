@@ -1,5 +1,15 @@
-export type Result = [par1: number | null, part2: number | null];
+export function log(depth: number, ...msg: any[]) {
+  if (depth === 0) {
+    console.log(...msg);
+    return;
+  }
 
+  const tab = 2;
+  const indent = tab * depth - 1;
+  console.log(" ".repeat(indent), ...msg);
+}
+
+export type Result = [par1: number | null, part2: number | null];
 export function test(result: Result, expected: Result) {
   testPart(result, expected, 1);
   testPart(result, expected, 2);
