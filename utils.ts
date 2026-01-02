@@ -1,3 +1,17 @@
+export const Grid = {
+  copy(grid: string[][]): string[][] {
+    return grid.map((row) => row.slice());
+  },
+  parse(text: string): string[][] {
+    return text.split("\n").map((line) => line.split(""));
+  },
+  print(grid: string[][]) {
+    grid.forEach((row) => {
+      console.log(row.join(" "));
+    });
+  },
+};
+
 export function log(depth: number, ...msg: any[]) {
   if (depth === 0) {
     console.log(...msg);
