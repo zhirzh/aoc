@@ -8,8 +8,8 @@ const sample = `987654321111111
 
 const input = readFileSync("./d3.txt", "utf8");
 
-test(solve(sample), [357, null]);
-test(solve(input), [17095, 43287141963]);
+test(solve(sample), [357, 3121910778619]);
+test(solve(input), [17095, null]);
 
 function solve(input: string): Result {
   let ans1 = 0;

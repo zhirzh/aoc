@@ -17,10 +17,6 @@ const input = readFileSync("./d1.txt", "utf8");
 test(solve(sample), [3, 6]);
 test(solve(input), [1165, null]);
 
-function mod(x: number, n: number) {
-  return ((x % n) + n) % n;
-}
-
 function solve(input: string): Result {
   const n = 100;
   let dial = 50;
@@ -48,4 +44,8 @@ function solve(input: string): Result {
   });
 
   return [ans1, ans2];
+}
+
+function mod(x: number, n: number) {
+  return ((x % n) + n) % n;
 }
