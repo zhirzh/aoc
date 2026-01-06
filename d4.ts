@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { Grid, Result, test } from "./utils";
+import { Grid, Result, checkSolve } from "./utils";
 
 const sample = `..@@.@@@@.
 @@@.@.@.@@
@@ -14,8 +14,8 @@ const sample = `..@@.@@@@.
 
 const input = readFileSync("./d4.txt", "utf8");
 
-test(solve(sample), [13, 43]);
-test(solve(input), [1449, 8746]);
+checkSolve(solve(sample), [13, 43]);
+checkSolve(solve(input), [1449, 8746]);
 
 function solve(input: string): Result {
   const grid = Grid.parse(input);

@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { Result, test } from "./utils";
+import { Result, checkSolve } from "./utils";
 
 const sample = `987654321111111
 811111111111119
@@ -8,8 +8,8 @@ const sample = `987654321111111
 
 const input = readFileSync("./d3.txt", "utf8");
 
-test(solve(sample), [357, 3121910778619]);
-test(solve(input), [17095, null]);
+checkSolve(solve(sample), [357, 3121910778619]);
+checkSolve(solve(input), [17095, null]);
 
 function solve(input: string): Result {
   let ans1 = 0;

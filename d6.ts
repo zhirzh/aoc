@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { Grid, Result, test } from "./utils";
+import { Grid, Result, checkSolve } from "./utils";
 
 const sample = `
 123 328  51 64 
@@ -9,8 +9,8 @@ const sample = `
 
 const input = readFileSync("./d6.txt", "utf8");
 
-test(solve(sample), [4277556, 3263827]);
-test(solve(input), [6891729672676, 9770311947567]);
+checkSolve(solve(sample), [4277556, 3263827]);
+checkSolve(solve(input), [6891729672676, 9770311947567]);
 
 function solve(input: string): Result {
   return [solve1(input), solve2(input)];

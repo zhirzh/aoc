@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { Result, test } from "./utils";
+import { Result, checkSolve } from "./utils";
 
 const sample = `3-5
 10-14
@@ -15,8 +15,8 @@ const sample = `3-5
 
 const input = readFileSync("./d5.txt", "utf8");
 
-test(solve(sample), [3, 14]);
-test(solve(input), [558, 344813017450467]);
+checkSolve(solve(sample), [3, 14]);
+checkSolve(solve(input), [558, 344813017450467]);
 
 function solve(input: string): Result {
   const [freshIdsInput, idsInput] = input.split("\n\n");

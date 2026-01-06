@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { Result, test } from "./utils";
+import { Result, checkSolve } from "./utils";
 
 const sample = `L68
 L30
@@ -14,8 +14,8 @@ L82`;
 
 const input = readFileSync("./d1.txt", "utf8");
 
-test(solve(sample), [3, 6]);
-test(solve(input), [1165, null]);
+checkSolve(solve(sample), [3, 6]);
+checkSolve(solve(input), [1165, null]);
 
 function solve(input: string): Result {
   const n = 100;
