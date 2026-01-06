@@ -10,6 +10,22 @@ export const Grid = {
       console.log(row.join(" "));
     });
   },
+  transpose(grid: string[][]) {
+    const R = grid.length;
+    const C = grid[0].length;
+
+    const newGrid: string[][] = Array.from({ length: C }, () =>
+      Array.from({ length: R })
+    );
+
+    for (let r = 0; r < R; r++) {
+      for (let c = 0; c < C; c++) {
+        newGrid[c][r] = grid[r][c];
+      }
+    }
+
+    return newGrid;
+  },
 };
 
 export function log(depth: number, ...msg: any[]) {
